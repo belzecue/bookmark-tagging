@@ -8,7 +8,7 @@ define(function (require, exports, module) {
             idb.create(dbKey, {tags: tags}, op);
         },
         add: function (tags, op) {
-            this.addTagsToCache(tags);
+            this.addTagsToCache(tags.sort());
             idb.add(dbKey, {tags: tags}, 'tags', op);
         },
         addAll: function (tagGroups, op) {
